@@ -1,5 +1,5 @@
 # Limtick.github.io
 
-self one peace place
+code game music
 
-powered by [Hexo](https://hexo.io/zh-cn/)
+powered by [vuepress](https://vuepress.vuejs.org/)
