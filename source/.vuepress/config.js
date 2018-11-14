@@ -5,6 +5,7 @@ module.exports = {
   base: '/',
   title: 'limtick',
   description: 'code game music',
+  host: '192.168.2.104',
   // host: '0.0.0.0',
   // port: '8080',
   // theme: '',

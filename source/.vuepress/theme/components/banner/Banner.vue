@@ -33,5 +33,5 @@ export default {
       filter blur(5px)
       transform scale(1.1)
     @media (max-width: $MQMobile)
-      height $bannerHeight - 300px
+      height $bannerHeight - 370px
 </style>
