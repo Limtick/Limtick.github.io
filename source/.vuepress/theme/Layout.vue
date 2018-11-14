@@ -19,7 +19,7 @@
       @click="toggleSidebar(false)"
     ></div>
 
-    <!-- <Sidebar
+    <Sidebar
       :items="sidebarItems"
       @toggle-sidebar="toggleSidebar"
     >
@@ -31,7 +31,7 @@
         name="sidebar-bottom"
         slot="bottom"
       />
-    </Sidebar> -->
+    </Sidebar>
 
     <div class="main-content">
       <div

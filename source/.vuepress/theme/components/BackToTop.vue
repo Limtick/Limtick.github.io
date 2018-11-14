@@ -62,7 +62,7 @@ export default {
   background-color $accentColor
   z-index 1
   transition all .5s
-  .icon-font
+  .icon
     font-size 30px
   &:hover
     background-color darken($accentColor, 20%)

@@ -1,7 +1,8 @@
 <template>
   <div :class="['search-box', { 'focused': focused }]">
-    <icon-font icon="search"/>
+    <icon-font icon="search" @click="focuseInput"/>
     <input
+      ref="searchInput"
       @input="query = $event.target.value"
       aria-label="Search"
       :value="query"
@@ -112,6 +113,10 @@ export default {
       return '/'
     },
 
+    focuseInput() {
+      this.$refs.searchInput.focus()
+    },
+
     onUp () {
       if (this.showSuggestions) {
         if (this.focusIndex > 0) {
@@ -158,12 +163,13 @@ export default {
 .search-box
   display inline-block
   position relative
-  .material-icons
+  .icon
     position absolute
     top 8px
     left 10px
+    z-index 1
   &.focused
-    .material-icons
+    .icon
       color $linkNormalColor
   input
     cursor text

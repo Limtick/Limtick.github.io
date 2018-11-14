@@ -21,7 +21,7 @@ export default {
 </script>
 
 <style lang='stylus' scoped>
-@import '~styles/config.styl';
+@import '~styles/config.styl'
 .banner
   position relative
   .outer
@@ -32,4 +32,6 @@ export default {
     &.blur
       filter blur(5px)
       transform scale(1.1)
+    @media (max-width: $MQMobile)
+      height $bannerHeight - 300px
 </style>

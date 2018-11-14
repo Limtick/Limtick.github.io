@@ -53,7 +53,7 @@ export default {
 .station-wrap
   position absolute
   top $navbarHeight + 2rem
-  right 18rem
+  right 10rem
   width 200px
   padding-top 20px
   margin 0
@@ -78,4 +78,9 @@ export default {
       &:hover
         p:nth-child(2)
           text-decoration underline
+  @media (max-width: $MQNarrow)
+    right 5rem
+  @media (max-width: $MQMobileNarrow)
+    display none
+    
 </style>

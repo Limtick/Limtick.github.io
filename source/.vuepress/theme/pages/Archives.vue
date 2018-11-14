@@ -103,10 +103,20 @@ $paddingLeft = 30px
       li
         display flex
         justify-content space-between
+        line-height 30px
         a
           font-size 16px
           &:hover
             text-decoration underline
         span
           font-size 14px
+    @media (max-width: $MQMobile)
+      ul
+        padding-left 0
+        li
+          flex-direction column
+          padding .2rem
+          border-bottom 1px dashed #ccc
+          span
+            font-size 12px
 </style>

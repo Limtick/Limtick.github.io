@@ -1,5 +1,5 @@
 <template>
-  <i class="material-icons icon-font">{{ icon }}</i>
+  <i class="material-icons icon" @click="handleClick">{{ icon }}</i>
 </template>
 
 <script>
@@ -11,6 +11,11 @@ export default {
   data () {
     return {
 
+    }
+  },
+  methods: {
+    handleClick(e) {
+      this.$emit('click', e, this)
     }
   }
 }
