@@ -2,11 +2,6 @@
   <div class="home">
 
     <div class="hero">
-      <img
-        v-if="data.heroImage"
-        :src="$withBase(data.heroImage)"
-        alt="hero"
-      >
 
       <h1>{{ data.heroText || $title || 'Hello' }}</h1>
 
@@ -15,13 +10,12 @@
       </p>
 
       <p
-        class="action"
-        v-if="data.actionText && data.actionLink"
+        class="links"
+        v-if="links && links.length"
       >
-        <NavLink
-          class="action-button"
-          :item="actionLink"
-        />
+        <a v-for="item in links" :key="item.link" :href="item.link" target="_blank">
+          <img width="40" height="40" :src="$withBase(`image/svg/${item.icon}.svg`)" alt="">
+        </a>
       </p>
     </div>
 
@@ -62,12 +56,13 @@ export default {
     data () {
       return this.$page.frontmatter
     },
+    links () {
+      return this.$site.themeConfig.links
+    }
+  },
+  methods: {
+    jump(link) {
 
-    actionLink () {
-      return {
-        link: this.data.actionLink,
-        text: this.data.actionText
-      }
     }
   }
 }
@@ -82,31 +77,22 @@ export default {
   margin 0px auto
   .hero
     text-align center
-    img
-      max-height 280px
-      display block
-      margin 3rem auto 1.5rem
     h1
       font-size 3rem
-    h1, .description, .action
+    h1, .description, .links
       margin 1.8rem auto
-    .description
+    .description, .links
       max-width 35rem
       font-size 1.6rem
       line-height 1.3
       color lighten($textColor, 40%)
-    .action-button
-      display inline-block
-      font-size 1.2rem
-      color #fff
-      background-color $accentColor
-      padding 0.8rem 1.6rem
-      border-radius 4px
-      transition background-color .1s ease
-      box-sizing border-box
-      border-bottom 1px solid darken($accentColor, 10%)
-      &:hover
-        background-color lighten($accentColor, 10%)
+    .links
+      display flex
+      align-items center
+      justify-content center
+      a
+        display block
+        height 40px
   .features
     border-top 1px solid $borderColor
     padding 1.2rem 0
@@ -156,9 +142,6 @@ export default {
         margin 1.2rem auto
       .description
         font-size 1.2rem
-      .action-button
-        font-size 1rem
-        padding 0.6rem 1.2rem
     .feature
       h2
         font-size 1.25rem

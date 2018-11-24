@@ -5,7 +5,7 @@ module.exports = {
   base: '/',
   title: 'limtick',
   description: 'code game music',
-  host: '192.168.2.104',
+  // host: '192.168.2.104',
   // host: '0.0.0.0',
   // port: '8080',
   // theme: '',
@@ -23,6 +23,9 @@ module.exports = {
       { text: '归档', link: '/archives/' },
       { text: '分类', link: '/categories/' },
       { text: '标签', link: '/tags/' }
+    ],
+    links: [
+      { icon: 'github', link: 'https://github.com/Limtick' },
     ],
     sidebar: [
       // '/posts/vue-sitemap'

@@ -3,17 +3,17 @@
     <div class="content">
       <h1>404</h1>
       <blockquote>{{ getMsg() }}</blockquote>
-      <router-link to="/">Take me home.</router-link>
+      <router-link to="/">返回首页</router-link>
     </div>
   </div>
 </template>
 
 <script>
 const msgs = [
-  `There's nothing here.`,
-  `How did we get here?`,
-  `That's a Four-Oh-Four.`,
-  `Looks like we've got some broken links.`
+  `我是谁 我在哪?`,
+  `喝杯咖啡冷静一下`,
+  `成就 荒芜之地 已达成`,
+  `抱歉，此链接暂时无法访问`
 ]
 
 export default {

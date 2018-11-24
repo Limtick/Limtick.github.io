@@ -82,6 +82,7 @@ function resolveOpenGroupIndex (route, items) {
 @import '~styles/config.styl'
 
 .sidebar
+  display none
   ul
     padding 0
     margin 0

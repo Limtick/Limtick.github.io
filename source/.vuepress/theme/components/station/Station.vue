@@ -1,7 +1,7 @@
 <template>
   <div class="station-wrap cgm-card">
     <div class="avatar">
-      <img src="/image/J0003-1.jpg" alt="">
+      <img src="/image/J0003-1.jpg" alt="" @click="$router.push({ path: '/' })">
     </div>
     <ul>
       <router-link v-for="item in stationData" :key="item.path" :to="item.path">
@@ -68,6 +68,8 @@ export default {
       width 100%
       height 100%
       border-radius 50%
+      box-shadow 0px 0px 15px rgba(0, 0, 0, .3)
+      cursor pointer
   ul
     padding 0
     display flex

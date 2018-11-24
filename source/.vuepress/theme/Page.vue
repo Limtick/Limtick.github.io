@@ -4,7 +4,7 @@
     <slot name="left"></slot>
     <slot name="right"></slot>
 
-    <Content class="cgm-card" :custom="false"/>
+    <Content :class="['cgm-card', { 'sidebar-on': sidebarItems.length }]" :custom="false"/>
 
     <!-- <div class="page-edit">
       <div
@@ -28,7 +28,7 @@
       </div>
     </div> -->
 
-    <div class="page-nav" v-if="prev || next">
+    <!-- <div class="page-nav" v-if="prev || next">
       <p class="inner">
         <span
           v-if="prev"
@@ -57,7 +57,7 @@
           →
         </span>
       </p>
-    </div>
+    </div> -->
 
     <slot name="bottom"/>
   </div>

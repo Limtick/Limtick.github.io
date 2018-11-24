@@ -6,6 +6,7 @@
 @require './wrapper'
 @require './toc'
 @require './util'
+@require './func'
 @require './cgm-theme'
 
 html, body
@@ -34,8 +35,8 @@ body
   box-sizing border-box
   // background-color rgba(0,0,0,.3)
   // transition all .5s
-  &.bg
-    background-color #fff
+  &.fixed
+    background-color hex2rgba(#fff, .8)
     box-shadow 0 1px 3px rgba(26,26,26,.1)
     .nav-links
       a
@@ -76,9 +77,14 @@ body
   border-right 1px solid $borderColor
   overflow-y auto
   &.in-page 
+    display: block
     position absolute
     top 0
     left 10rem
+    bottom auto
+    &.fixed
+      position fixed
+      top $navbarHeight - 1rem
     @media (max-width: $MQMobile)
       display: none
   
@@ -88,6 +94,8 @@ body
 
 .content:not(.custom)
   @extend $wrapper
+  &.sidebar-on
+    margin 0 auto 0 32rem
   > *:first-child
     margin-top $navbarHeight
   a:hover

@@ -1,7 +1,7 @@
 ---
 title: {{ title }}
 date: {{ date }}
-sidebar: auto
+sidebar: {{ sidebar }}
 categories: 
 tags:
 comments:

@@ -8,7 +8,7 @@
     <Navbar
       ref="navbar"
       v-if="shouldShowNavbar"
-      :class="{bg: bgEnabled}"
+      :class="{ fixed }"
       @toggle-sidebar="toggleSidebar"
     />
 
@@ -50,7 +50,7 @@
           slot="top"/>
         <Sidebar
           slot="left"
-          class="in-page cgm-card"
+          :class="['in-page', 'cgm-card', { 'fixed': fixed }]"
           :items="sidebarItems"
           @toggle-sidebar="toggleSidebar">
           <slot
@@ -97,7 +97,7 @@ export default {
   data () {
     return {
       isSidebarOpen: false,
-      bgEnabled: false,
+      fixed: false,
       swUpdateEvent: null
     }
   },
@@ -194,7 +194,7 @@ export default {
         document.documentElement.scrollTop,
         document.body.scrollTop
       )
-      this.bgEnabled = (scrollTop >= this.bannerHeight - this.navbarHeight) ? true : false
+      this.fixed = (scrollTop >= this.bannerHeight - this.navbarHeight) ? true : false
       
       this.onScroll()
     },

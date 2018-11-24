@@ -6,13 +6,32 @@ const chalk = require('chalk')
 const promise = require('bluebird')
 const moment = require('moment')
 const { argv } = require('yargs')
+  .option('n', {
+    alias : 'name',
+    demand: true,
+    describe: 'post name',
+    type: 'string'
+  })
+  .option('s', {
+    alias : 'sidebar',
+    demand: false,
+    default: false,
+    describe: 'enable sidebar',
+    type: 'boolean'
+  })
+  .boolean(['sidebar'])
+  .usage('Usage: node index.js [options]')
+  .example('node index.js -n myPost', 'create file named myPost with sidebar off')
+  .example('node index.js -n myPost -s', 'create file named myPost with sidebar on')
+  .help('h')
 
 promise.promisifyAll(fs)
 
 const resolve = p => path.resolve(__dirname, '../../', p)
 
 
-const { name } = argv
+const { name, sidebar } = argv
+
 const dir = resolve('.vuepress/scaffolds')
 const output = resolve('posts')
 const tagRE = /\{\{((?:.|\n)+?)\}\}/g
@@ -20,7 +39,8 @@ const tagRE = /\{\{((?:.|\n)+?)\}\}/g
 
 const renderRules = {
   title: name,
-  date: moment().format('YYYY-MM-DD HH:mm:ss')
+  date: moment().format('YYYY-MM-DD HH:mm:ss'),
+  sidebar: sidebar ? 'auto' : 'none',
 }
 
 fs.readFileAsync(path.join(`${dir}/post.md`), 'utf-8').then(data => {
