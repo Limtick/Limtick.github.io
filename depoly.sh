@@ -10,6 +10,6 @@ git init
 git add -A
 git commit -m 'update'
 
-git push -f git@github.com:Limtick/Limtick.github.io.git master
+git push -f "https://${access_token}@github.com:Limtick/Limtick.github.io.git" master
 
 cd -
