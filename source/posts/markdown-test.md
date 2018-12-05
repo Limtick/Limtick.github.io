@@ -188,6 +188,9 @@ Right aligned columns
 
 Autoconverted link https://github.com/nodeca/pica (enable linkify to see)
 
+## Vue Component
+
+<markdown-test-Main/>
 
 ## Images
 
