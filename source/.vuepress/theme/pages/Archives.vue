@@ -42,7 +42,12 @@ export default {
 
       let res = [], temp = []
       this.each(query, (val, key) => {
-        res = this.$posts.filter(item => item.frontmatter[key] === val)
+        res = this.$posts.filter(item => {
+          return item.frontmatter[key] &&
+                 item.frontmatter[key].indexOf(',') > -1 ? 
+                   item.frontmatter[key].split(',').some(item => item === val) : 
+                   item.frontmatter[key] === val
+        })
       })
 
       return res

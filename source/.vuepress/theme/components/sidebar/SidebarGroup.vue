@@ -42,6 +42,8 @@ export default {
 </script>
 
 <style lang="stylus">
+@import '~styles/config.styl'
+
 .sidebar-group
   &:not(.first)
     margin-top 1em
@@ -72,6 +74,11 @@ export default {
     top -0.18em
 
 .sidebar-group-items
+  max-height 600px
   transition height .1s ease-out
-  overflow hidden
+  overflow auto
+
+@media (max-width: $MQMobile)
+  .sidebar-group-items
+    max-height inherit
 </style>

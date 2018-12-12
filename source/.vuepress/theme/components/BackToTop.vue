@@ -66,6 +66,7 @@ export default {
     font-size 30px
   &:hover
     background-color darken($accentColor, 20%)
+    transform scale(1.2)
 
 @media (max-width: 959px)
   .go-to-top

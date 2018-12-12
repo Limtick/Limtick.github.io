@@ -2,7 +2,8 @@
 title: {{ title }}
 date: {{ date }}
 sidebar: {{ sidebar }}
-categories: 
-tags:
-comments:
+categories: {{ category }}
+tags: {{ tag }}
 ---
+
+# {{ title }}

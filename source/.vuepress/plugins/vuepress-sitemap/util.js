@@ -19,6 +19,18 @@ function genMap(list, key) {
     const value = item.frontmatter[key]
     if (value === undefined || value === null) return
 
+    if (value.indexOf(',') > -1) {
+      const arr = value.split(',')
+      arr.forEach(v => {
+        if (!map[v]) {
+          map[v] = []
+        }
+        map[v].push(item)
+      })
+      return
+    }
+
+
     if (!map[value]) {
       map[value] = []
     }

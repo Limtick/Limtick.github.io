@@ -133,9 +133,6 @@ export default {
     padding-left 1.5rem
     padding-right 1.5rem
     .hero
-      img
-        max-height 210px
-        margin 2rem auto 1.2rem
       h1
         font-size 2rem
       h1, .description, .action

@@ -12,6 +12,18 @@ const { argv } = require('yargs')
     describe: 'post name',
     type: 'string'
   })
+  .option('c', {
+    alias : 'category',
+    demand: false,
+    describe: 'post category',
+    type: 'string'
+  })
+  .option('t', {
+    alias : 'tag',
+    demand: false,
+    describe: 'post tag',
+    type: 'string'
+  })
   .option('s', {
     alias : 'sidebar',
     demand: false,
@@ -20,24 +32,30 @@ const { argv } = require('yargs')
     type: 'boolean'
   })
   .boolean(['sidebar'])
-  .usage('Usage: node index.js [options]')
-  .example('node index.js -n myPost', 'create file named myPost with sidebar off')
-  .example('node index.js -n myPost -s', 'create file named myPost with sidebar on')
+  .usage('Usage: easy-post [options]')
+  .example('easy-post -n myPost', 'create file named myPost with sidebar off')
+  .example('easy-post -n myPost -s', 'create file named myPost with sidebar on')
+  .example('easy-post -n myPost -c 分享 -t javascript', 'create file named myPost with category and tag')
   .help('h')
 
 promise.promisifyAll(fs)
 
 const resolve = p => path.resolve(__dirname, '../../', p)
 
-
-const { name, sidebar } = argv
+const { 
+  name, 
+  sidebar,
+  category,
+  tag
+} = argv
 
 const dir = resolve('.vuepress/scaffolds')
 const output = resolve('posts')
 const tagRE = /\{\{((?:.|\n)+?)\}\}/g
 
-
 const renderRules = {
+  category,
+  tag,
   title: name,
   date: moment().format('YYYY-MM-DD HH:mm:ss'),
   sidebar: sidebar ? 'auto' : 'none',

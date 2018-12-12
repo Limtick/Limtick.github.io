@@ -22,23 +22,6 @@ export default {
       
     }
   },
-  computed: {
-    tagMap () {
-      const map = {}
-
-      this.$site.pages.forEach(item => {
-        const { tags } = item.frontmatter
-        if (tags === undefined || tags === null) return
-
-        if (!map[tags]) {
-          map[tags] = []
-        }
-        map[tags].push(tags)
-      })
-
-      return map
-    }
-  },
   methods: {
     changeRoute(tags) {
       this.$router.push({

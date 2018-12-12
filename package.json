@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "author": "limtick",
   "description": "personal blog powered by vuepress",
+  "bin": {
+    "easy-post": "./source/.vuepress/bin/index.js"
+  },
   "scripts": {
     "dev": "npx vuepress dev source",
     "build": "npx vuepress build source"
