@@ -18,6 +18,11 @@ module.exports = {
   },
   themeConfig: {
     showLogo: false,
+    banners: [
+      'bilibili.jpg',
+      'Forza Horizon 4.jpg',
+      'The Last of Us clip.jpg',
+    ],
     nav: [
       { text: '主页', link: '/' },
       { text: '归档', link: '/archives/' },

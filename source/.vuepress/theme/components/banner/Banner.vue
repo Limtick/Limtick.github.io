@@ -17,11 +17,7 @@ export default {
   data () {
     return {
       base: '/image/banner/',
-      posters: [
-        'bilibili.jpg',
-        'Forza Horizon 4.png',
-        'The Last of Us clip.jpg',
-      ],
+      posters: [],
       posterStyle: ''
     }
   },
@@ -43,6 +39,7 @@ export default {
     }
   },
   mounted () {
+    this.posters = this.$site.themeConfig.banners
     this.loadPoster()
   }
 }
