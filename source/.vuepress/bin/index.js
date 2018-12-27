@@ -83,7 +83,8 @@ function _render(data) {
   })
   
   keymap.forEach(item => {
-    data = data.replace(item.text, renderRules[item.key])
+    console.log(renderRules[item.key])
+    data = data.replace(item.text, renderRules[item.key] || '')
   })
   
   return data
