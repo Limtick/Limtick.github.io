@@ -62,10 +62,11 @@ const renderRules = {
 }
 
 fs.readFileAsync(path.join(`${dir}/post.md`), 'utf-8').then(data => {
-  fs.writeFileAsync(`${output}/${name}.md`, _render(data)).then(data => {
-    
+  const filename = `${output}/${name}.md`
+  fs.writeFileAsync(filename, _render(data)).then(data => {
+    console.log(chalk.green(filename) + ' is created')
   }).catch(error => {
-
+    console.log(error)
   })
 }).catch(error => {
   console.log(error)
@@ -83,7 +84,6 @@ function _render(data) {
   })
   
   keymap.forEach(item => {
-    console.log(renderRules[item.key])
     data = data.replace(item.text, renderRules[item.key] || '')
   })
   
