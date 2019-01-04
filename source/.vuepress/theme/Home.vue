@@ -14,7 +14,7 @@
         v-if="links && links.length"
       >
         <a v-for="item in links" :key="item.link" :href="item.link" target="_blank">
-          <img width="40" height="40" :src="$withBase(`image/svg/${item.icon}.svg`)" alt="">
+          <img width="40" height="40" :src="$withBase(`image/svg/${item.icon}.png`)" alt="">
         </a>
       </p>
     </div>
