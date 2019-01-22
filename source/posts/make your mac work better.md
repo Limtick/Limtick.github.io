@@ -89,6 +89,8 @@ tags: mac
 > - [配置 iTerm2 主题](https://www.cnblogs.com/xishuai/p/mac-iterm2.html)
 > - [Autojump](https://www.cnblogs.com/LeeScofiled/p/7860144.html)
 
+此处的主题配置有个小坑，可参考 [这篇](./iTerm2中使用Solarized主题的坑.md#iterm2中使用solarized主题的坑)
+
 ## 软件推荐
 
 > **安装软件如果提示未授权，右键程序, 之后按住 `⌃` ，同时点击打开即可进行安装**
